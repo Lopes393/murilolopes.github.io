@@ -146,7 +146,7 @@ img{
 @media screen and (max-width: 768px) {
     .nav__menu{
         position: fixed;
-        top: var(--header-height);
+        top: -100%;
         left: 0;
         width: 100%;
         padding-top: 1.5rem;
@@ -156,4 +156,91 @@ img{
         box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
         border-radius: 0 0 1rem 1rem;
     }
+}
+
+.nav__item{
+    margin-bottom: var(--mb-3);
+}
+
+.nav__link{
+    color: var(--first-color-lighten);
+    transition: .3s;
+}
+
+.nav__link:hover{
+    color: var(--first-color-light);
+}
+
+.nav__logo, .nav__toggle{
+    color: var(--first-color-lighten);
+}
+
+.nav__toggle{
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+/* Show Menu */
+.show-menu{
+    top: var(--header-height);
+}
+
+/* Active menu */
+.active-link{
+    position: relative;
+}
+
+.active-link::after{
+    content: '';
+    position: absolute;
+    bottom: -.7rem;
+    left: 0;
+    width: 65%;
+    height: 3px;
+    background-color: var(--first-color-light);
+}
+
+/* CHANGE BACKGROUND HEADER */
+.scroll-header{
+    background-color: var(--first-color-lighten);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+
+.scroll-header .nav__logo, .scroll-header .nav__toggle, .scroll-header .nav__link{
+    color: var(--first-color-dark);
+}
+
+.scroll-header .nav__menu{
+    background-color: var(--first-color-lighten);
+}
+
+/* scroll top */
+.scrolltop{
+    position: fixed;
+    right: 1rem;
+    bottom: -20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .5rem;
+    background: rgba(123, 111, 113, .7);
+    border-radius: .5rem;
+    z-index: var(--z-tooltip);
+    transform: .4s;
+    visibility: hidden;
+}
+
+.scrolltop:hover{
+    background-color: var(--first-color);
+}
+
+.scrolltop__icon{
+    font-size: 2rem;
+    color: var(--first-color-lighten);
+}
+
+/* SHOW SCROLL TOP */
+.show-scroll{
+    visibility: visible;
+    bottom: 1.5rem;
 }
