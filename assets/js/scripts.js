@@ -62,3 +62,44 @@ function scrollTop() {
   else scrollTop.classList.remove("show-scroll");
 }
 window.addEventListener("scroll", scrollTop);
+
+// Mixitup filter
+const mixer = mixitup(".portfolio__container", {
+  selectors: {
+    target: ".portfolio__content",
+  },
+  animation: {
+    duration: 400,
+  },
+});
+
+// Link active portfolio
+const linkPortfolio = document.querySelectorAll(".portfolio__item");
+
+function activePortfolio() {
+  if (linkPortfolio) {
+    linkPortfolio.forEach((l) => l.classList.remove("active-portfolio"));
+    this.classList.add("active-portfolio");
+  }
+}
+linkPortfolio.forEach((l) => l.addEventListener("click", activePortfolio));
+
+// Swiper Carousel
+const swiper = new Swiper(".testimonial__container", {
+  spaceBetween: 16,
+  loop: true,
+  grabCursor: true,
+
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 2,
+    },
+    1024: {
+      slidesPerView: 3,
+    },
+  },
+});
